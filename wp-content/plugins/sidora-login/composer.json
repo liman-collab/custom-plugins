@@ -1,0 +1,19 @@
+{
+    "name": "sidora/sidora-login",
+    "description": "A login plugin that has a modern ui",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Liman Kastrati",
+            "email": "liman.i.kastrati@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./inc"
+        }
+    }
+}
