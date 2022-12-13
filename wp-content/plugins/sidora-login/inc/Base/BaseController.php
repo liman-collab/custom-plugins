@@ -17,4 +17,6 @@ class BaseController
         $this->plugin_url = plugin_dir_url( dirname( __FILE__, 2 ) );
         $this->plugin = plugin_basename( dirname( __FILE__, 3 ) ) . '/sidora-login.php';
     }
+
+
 }

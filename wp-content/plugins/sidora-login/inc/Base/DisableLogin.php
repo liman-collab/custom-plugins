@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Gif Generator
+ * @package Sidora Login
  */
 
 namespace Inc\Base;
@@ -29,7 +29,7 @@ class DisableLogin
                 $page = "http://sidora_plugins.test/wp-content/plugins/sidora-login/templates/custom-login.php";
                 // Redirect to the home page
 
-
+//                $page = PLUGIN_PATH;
                 wp_redirect($page);
                 // Stop execution to prevent the page loading for any reason
                 exit();

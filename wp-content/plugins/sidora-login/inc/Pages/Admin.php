@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Gif Generator
+ * @package Sidora Login
  */
 
 namespace Inc\Pages;

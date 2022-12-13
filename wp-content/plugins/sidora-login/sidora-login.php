@@ -36,6 +36,7 @@ Copyright (C) 2022 Liman Kastrati
 // Make sure we don't expose any info if called directly
 
 use Inc\Base\Activate;
+use Inc\Base\AddCustomPage;
 use Inc\Base\Deactivate;
 
 if (!function_exists('add_action')) {
@@ -62,6 +63,12 @@ function deactivate_gif_generator_plugin(){
     Deactivate::deactivate();
 }
 register_activation_hook(__FILE__,'deactivate_gif_generator_plugin');
+
+function add_my_custom_page(){
+    AddCustomPage::add_my_custom_page();
+}
+register_activation_hook(__FILE__,'add_my_custom_page');
+
 
 if (class_exists('Inc\\Init')){
     Inc\Init::register_services();

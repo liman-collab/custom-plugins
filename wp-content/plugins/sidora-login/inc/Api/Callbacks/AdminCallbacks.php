@@ -12,7 +12,13 @@ class AdminCallbacks extends BaseController
 {
     public function adminDashboard()
     {
-        return require_once( "$this->plugin_path/templates/login.php");
+        return require_once( "$this->plugin_path/templates/admin.php");
+    }
+
+    public function custom_page()
+    {
+        return require_once( "$this->plugin_path/templates/custom-login-page.php");
+
     }
 
 
