@@ -11,32 +11,47 @@ class DisableLogin
 
     public function register()
     {
-        add_action('init',  array($this, 'prevent_wp_login'));
-
+        add_action('init',  array($this, 'redirect_wp_admin'));
+        add_action('wp_logout',  array($this, 'redirect_custom_login'));
+        add_action('wp_ajax_custom_login',array($this,'handleLogin'));
+        add_action('wp_ajax_nopriv_custom_login',array($this,'handleLogin'));
     }
 
-    public function prevent_wp_login()
+    public function redirect_wp_admin()
     {
-
-            // WP tracks the current page - global the variable to access it
             global $pagenow;
-            // Check if a $_GET['action'] is set, and if so, load it into $action variable
             $action = (isset($_GET['action'])) ? $_GET['action'] : '';
-            // Check if we're on the login page, and ensure the action is not 'logout'
-            if( $pagenow == 'wp-login.php' && ( ! $action || ( $action && ! in_array($action, array('logout', 'lostpassword', 'rp', 'resetpass'))))) {
-                // Load the home page url
-//                $page = get_bloginfo('url');
-                $page = "http://sidora_plugins.test/wp-content/plugins/sidora-login/templates/custom-login.php";
-                // Redirect to the home page
-
-//                $page = PLUGIN_PATH;
-                wp_redirect($page);
-                // Stop execution to prevent the page loading for any reason
+            if( $pagenow == 'wp-login.php'  && $_GET['action'] != "logout" ) {
+                wp_redirect(get_permalink(418));
                 exit();
             }
 
     }
 
+    public function redirect_custom_login()
+    {
+        wp_redirect(get_permalink(418));
+        exit();
+    }
+
+    public function handleLogin()
+    {
+        $param = isset($_POST['param']) ? trim($_POST['param']): "";
+        if ($param == "login_test"){
+            $info = array();
+            $info['user_login'] = $_POST['user_login'];
+            $info['user_password'] = $_POST['user_password'];
+            $info['remember'] = true;
+
+            $user_signon = wp_signon($info,false);
+            if (is_wp_error($user_signon)){
+                echo json_encode(array("status"=>0));
+            }else{
+                echo json_encode(array("status"=>1));
+            }
+        }
+        die();
+    }
 
 
 }

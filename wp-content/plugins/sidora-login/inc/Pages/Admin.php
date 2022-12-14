@@ -42,7 +42,7 @@ class Admin extends BaseController
                 'page_title' => 'Sidora Login',
                 'menu_title' => 'Sidora Login',
                 'capability' => 'manage_options',
-                'menu_slug' => 'gif_generator_plugin',
+                'menu_slug' => 'sidora_login_plugin',
                 'callback' => array($this->callbacks, 'adminDashboard'),
                 'icon_url' => 'dashicons-admin-users',
                 'position' => 110
@@ -52,16 +52,16 @@ class Admin extends BaseController
 
     public function setSubPages()
     {
-//        $this->subpages = array(
-//            array(
-//                'parent_slug' => 'gif_generator_plugin',
-//                'page_title' => 'Saved Gifs',
-//                'menu_title' => 'Saved Gifs',
-//                'capability' => 'manage_options',
-//                'menu_slug' => 'gif_generator_saved_gifs',
-//                'callback' => array($this->callbacks, 'savedGifs'),
-//            ),
-//
-//        );
+        $this->subpages = array(
+            array(
+                'parent_slug' => 'sidora_login_plugin',
+                'page_title' => 'Saved Ui',
+                'menu_title' => 'Saved Ui',
+                'capability' => 'manage_options',
+                'menu_slug' => 'sidora_login_saved_ui',
+                'callback' => array($this->callbacks, 'custom_page'),
+            ),
+
+        );
     }
 }

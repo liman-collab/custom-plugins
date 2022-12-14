@@ -1,14 +1,10 @@
-<?php
-/*
-* Template Name: Custom Login Page
-*/
-?>
 
-<section class="my_login_form">
+
+<section class="my_login_form_test">
     <div class="container h-100">
         <div class="row justify-content-center h-100">
             <div class="card-wrapper">
-                <div class="text-center">
+                <div class="text-center mb-3">
                     <img src="http://sidora_plugins.test/wp-content/plugins/sidora-login/assets/images/logo.svg" alt="logo" width="80">
                 </div>
                 <div class="card fat">
@@ -54,9 +50,10 @@
                     </div>
                 </div>
                 <div class="footer">
-                    Copyright &copy; 2017 &mdash; Your Company-->
+<!--                    Copyright &copy; 2017 &mdash; Your Company-->
                 </div>
             </div>
         </div>
     </div>
 </section>
+

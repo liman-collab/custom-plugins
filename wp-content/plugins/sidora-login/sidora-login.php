@@ -53,6 +53,7 @@ define('PLUGIN_URL',plugin_dir_url(__FILE__));
 define('PLUGIN',plugin_basename(__FILE__));
 
 
+
 function activate_gif_generator_plugin(){
     Activate::activate();
 }
@@ -68,7 +69,6 @@ function add_my_custom_page(){
     AddCustomPage::add_my_custom_page();
 }
 register_activation_hook(__FILE__,'add_my_custom_page');
-
 
 if (class_exists('Inc\\Init')){
     Inc\Init::register_services();
