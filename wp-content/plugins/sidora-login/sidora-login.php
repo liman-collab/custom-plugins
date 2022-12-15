@@ -52,15 +52,25 @@ define('PLUGIN_PATH',plugin_dir_path(__FILE__));
 define('PLUGIN_URL',plugin_dir_url(__FILE__));
 define('PLUGIN',plugin_basename(__FILE__));
 
+function change_post_status($post_id,$status){
+    $current_post = get_post( $post_id, 'ARRAY_A' );
+    $current_post['post_status'] = $status;
+    return wp_update_post($current_post);
+}
 
 
 function activate_gif_generator_plugin(){
+//    change_post_status(472,'publish');
+//    move_uploaded_file(  PLUGIN_PATH .  "inc" , PLUGIN_PATH . 'templates/custom-login-page.php');
+
     Activate::activate();
+
 }
 register_activation_hook(__FILE__,'activate_gif_generator_plugin');
 
 
 function deactivate_gif_generator_plugin(){
+//    change_post_status(472,'draft');
     Deactivate::deactivate();
 }
 register_activation_hook(__FILE__,'deactivate_gif_generator_plugin');

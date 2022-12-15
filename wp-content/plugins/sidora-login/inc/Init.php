@@ -20,7 +20,9 @@ final class Init
             Base\Enqueue::class,
             Base\SettingsLinks::class,
             Base\DisableLogin::class,
-        ];
+            Base\TransferFile::class
+
+            ];
     }
 
     /**

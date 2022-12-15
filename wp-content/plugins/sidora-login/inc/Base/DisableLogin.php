@@ -22,7 +22,9 @@ class DisableLogin
             global $pagenow;
             $action = (isset($_GET['action'])) ? $_GET['action'] : '';
             if( $pagenow == 'wp-login.php'  && $_GET['action'] != "logout" ) {
-                wp_redirect(get_permalink(418));
+                $page = get_page_by_path( 'custom-login-template' );
+                wp_redirect(get_permalink($page->ID));
+
                 exit();
             }
 
@@ -30,8 +32,9 @@ class DisableLogin
 
     public function redirect_custom_login()
     {
-        wp_redirect(get_permalink(418));
-        exit();
+        $page = get_page_by_path( 'custom-login-template' );
+        wp_redirect(get_permalink($page->ID));
+         exit();
     }
 
     public function handleLogin()

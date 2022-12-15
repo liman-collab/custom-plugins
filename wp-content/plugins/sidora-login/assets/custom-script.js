@@ -6,7 +6,9 @@ $(document).ready(function () {
         },
 
         loginForm: function () {
+
             $('#btn_submit').click( function () {
+
                 // e.preventDefault();
                 var formdata = $('#wp_login_form').serialize();
                 formdata += "&action=custom_login&param=login_test"
@@ -20,7 +22,7 @@ $(document).ready(function () {
                         if(data.status === 1){
                             window.location =  window.location.origin
                         }else{
-                            alert('Invalid Users');
+                         alert('Invalid users')
                         }
 
                     }

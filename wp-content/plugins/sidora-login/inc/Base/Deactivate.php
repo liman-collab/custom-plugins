@@ -12,4 +12,5 @@ class Deactivate
     {
         flush_rewrite_rules();
     }
+
 }
