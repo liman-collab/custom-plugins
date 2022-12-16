@@ -6,7 +6,7 @@
 
 namespace Inc\Base;
 
-class ForgotPasswordController
+class ForgotPasswordController extends BaseController
 {
 
     public function register()
@@ -16,10 +16,12 @@ class ForgotPasswordController
     }
 
 
-    public function handlePassword()
+    public function validate_password_reset()
     {
 
+
     }
+
 
 
 }

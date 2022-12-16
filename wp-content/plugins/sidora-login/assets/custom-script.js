@@ -23,6 +23,7 @@ $(document).ready(function () {
                             window.location =  window.location.origin
                         }else{
                          alert('Invalid users')
+
                         }
 
                     }

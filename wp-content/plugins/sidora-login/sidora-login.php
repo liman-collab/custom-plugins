@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Gif Generator
+ * @package Sidora Login
  */
 
 /*
@@ -52,11 +52,6 @@ define('PLUGIN_PATH',plugin_dir_path(__FILE__));
 define('PLUGIN_URL',plugin_dir_url(__FILE__));
 define('PLUGIN',plugin_basename(__FILE__));
 
-function change_post_status($post_id,$status){
-    $current_post = get_post( $post_id, 'ARRAY_A' );
-    $current_post['post_status'] = $status;
-    return wp_update_post($current_post);
-}
 
 
 function activate_gif_generator_plugin(){

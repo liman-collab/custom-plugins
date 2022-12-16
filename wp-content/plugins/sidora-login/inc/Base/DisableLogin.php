@@ -13,8 +13,7 @@ class DisableLogin
     {
         add_action('init',  array($this, 'redirect_wp_admin'));
         add_action('wp_logout',  array($this, 'redirect_custom_login'));
-        add_action('wp_ajax_custom_login',array($this,'handleLogin'));
-        add_action('wp_ajax_nopriv_custom_login',array($this,'handleLogin'));
+
     }
 
     public function redirect_wp_admin()

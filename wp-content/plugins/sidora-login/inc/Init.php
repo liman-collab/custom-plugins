@@ -22,7 +22,7 @@ final class Init
             Base\DisableLogin::class,
             Base\TransferFile::class,
             Base\LoginController::class,
-            Base\ForgotPasswordController::class
+//            Base\ForgotPasswordController::class,
 
             ];
     }
