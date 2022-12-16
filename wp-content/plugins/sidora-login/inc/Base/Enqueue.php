@@ -13,7 +13,7 @@ class Enqueue
     {
         add_action('wp_enqueue_scripts', array($this, 'enqueue'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue'));
-        add_action('wp_print_styles', array($this, 'my_deregister_javascript'));
+        add_action('wp_print_styles', array($this, 'deregister_javascript'));
     }
 
     public function enqueue()
@@ -26,7 +26,7 @@ class Enqueue
     }
 
 
-    public function my_deregister_javascript() {
+    public function deregister_javascript() {
 
         $theme = get_stylesheet();
 

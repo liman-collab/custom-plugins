@@ -33,6 +33,7 @@ class Admin extends BaseController
         $this->setSubPages();
 
         $this->settings->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
+
     }
 
     public function setPages()

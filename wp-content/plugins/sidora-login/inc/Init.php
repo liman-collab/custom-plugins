@@ -20,7 +20,9 @@ final class Init
             Base\Enqueue::class,
             Base\SettingsLinks::class,
             Base\DisableLogin::class,
-            Base\TransferFile::class
+            Base\TransferFile::class,
+            Base\LoginController::class,
+            Base\ForgotPasswordController::class
 
             ];
     }
